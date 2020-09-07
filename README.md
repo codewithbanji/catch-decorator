@@ -3,13 +3,14 @@
 
 Allows you to handle exceptions in class methods with only one annotation
  (decorator). Idea of errors handling taken from Java.
+Includes a finally block handler. Handlers receive all method parameters.
 
- > *UPDATE* from v2: refactored to use stacked decorators style. Thx [@k1r0s](https://github.com/k1r0s) for idea :)  
+This is a fork of https://github.com/enkot/catch-decorator
 
 ## Install
 
 ```bash
-npm install catch-decorator
+npm install catch-finally-decorator
 ```
 
 ## Why?
@@ -83,6 +84,30 @@ class Messenger {
         return fetch(myRequest).then(response => { // can throw ServerError
             ...
         })
+    }
+}
+```
+
+The handler can accept the arguments of the method:
+```js
+import Catch from 'catch-decorator'
+
+class Messenger {
+    @Catch(SomeError, (error, ctx, args) => ctx.something(args /* args = [a,b] */))
+    getMessages(a, b) {
+        this.getData() // <-- can throw SomeError
+    }
+}
+```
+
+You can add a finally block like this:
+```js
+import Catch from 'catch-decorator'
+
+class Messenger {
+    @Catch(SomeError, handler, (ctx, args) => cts.something(args))
+    getMessages() {
+        this.getData() // <-- can throw SomeError
     }
 }
 ```
