@@ -21,7 +21,7 @@ function handleError(
     } else {
         // throw error further,
         // next decorator in chain can catch it
-        throw error
+        throw error;
     }
 }
 
