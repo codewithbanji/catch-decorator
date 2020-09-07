@@ -17,7 +17,7 @@ function handleError(
     if (typeof handler === 'function' && error instanceof errorClass) {
         // run handler with error object
         // and class context as second argument
-        handler.call(null, error, ctx, args)
+        handler.call(ctx, error, ctx, args)
     } else {
         // throw error further,
         // next decorator in chain can catch it
@@ -48,7 +48,7 @@ export default (errorClass: any, handler: HandlerFunction, finalizer?: Finalizer
                     return result.catch((error: any) => {
                         handleError(this, errorClass, handler, error,args )
                     // and the finally block here:
-                    }).finally(() => {if(finalizer) finalizer.call(null,this,args)});
+                    }).finally(() => {if(finalizer) finalizer.call(this,this,args)});
                 }
 
                 // return actual result
@@ -57,7 +57,7 @@ export default (errorClass: any, handler: HandlerFunction, finalizer?: Finalizer
                handleError(this, errorClass, handler, error, args)
             } finally{
               if(!isPromise){
-                if(finalizer) finalizer.call(null,args)
+                if(finalizer) finalizer.call(this,this,args)
               }
             }
         }
