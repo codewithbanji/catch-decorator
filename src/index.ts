@@ -1,8 +1,8 @@
 
 // originaly by https://github.com/enkot/catch-decorator/blob/master/src/index.ts
 
-type HandlerFunction = (error: any, ctx: any, args?: any[]) => void;
-type Finalizer = (ctx: any, args?: any[]) => void;
+type HandlerFunction = (error: any, ctx?: any, args?: any[]) => void;
+type Finalizer = (ctx?: any, args?: any[]) => void;
 
 function handleError(
     ctx: any,
