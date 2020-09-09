@@ -1,7 +1,7 @@
 {
-  "name": "catch-decorator",
-  "version": "2.0.0",
-  "description": "Let you handle exceptions with just one annotation",
+  "name": "catch-finally-decorator",
+  "version": "1.0.2",
+  "description": "Let you handle exceptions with just one annotation, including finally blocks",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enkot/catch-decorator.git"
+    "url": "git+https://github.com/codewithbanji/catch-decorator"
   },
   "keywords": [
     "catch",
@@ -22,9 +22,9 @@
   "author": "Enkot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/enkot/catch-decorator/issues"
+    "url": "https://github.com/codewithbanji/catch-decorator/issues"
   },
-  "homepage": "https://github.com/enkot/catch-decorator#readme",
+  "homepage": "https://github.com/codewithbanji/catch-decorator#readme",
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "jest": "^23.6.0",
