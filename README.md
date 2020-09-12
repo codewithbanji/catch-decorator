@@ -1,11 +1,16 @@
 # 🎣 catch-decorator
-[![Build Status](https://travis-ci.org/enkot/catch-decorator.svg?branch=master)](https://travis-ci.org/enkot/catch-decorator)
 
 Allows you to handle exceptions in class methods with only one annotation
  (decorator). Idea of errors handling taken from Java.
 Includes a finally block handler. Handlers receive all method parameters.
 
 This is a fork of https://github.com/enkot/catch-decorator
+
+To read about how it works:
+https://codewithbanji.com/2020/08/04/angular-typescript-async-catch-finally-decorator/
+
+And for other coding issues: 
+https://codewithbanji.com
 
 ## Install
 
